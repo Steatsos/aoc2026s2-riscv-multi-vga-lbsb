@@ -16,12 +16,11 @@ module mem (
   // regular port (read/write)
   always_ff @(posedge clk) begin
      if (we) begin
-      RAM[a[31:2]] <= wd;
-    end
-    if(wm[0]) RAM[a][ 7:0 ] <= wd[ 7:0 ];
-    if(wm[1]) RAM[a][15:8 ] <= wd[15:8 ];
-    if(wm[2]) RAM[a][23:16] <= wd[23:16];
-    if(wm[3]) RAM[a][31:24] <= wd[31:24];
+      if(wm[0]) RAM[a][ 7:0 ] <= wd[ 7:0 ];
+      if(wm[1]) RAM[a][15:8 ] <= wd[15:8 ];
+      if(wm[2]) RAM[a][23:16] <= wd[23:16];
+      if(wm[3]) RAM[a][31:24] <= wd[31:24];
+     end
   end
   // video port (read only)
   always_ff @(posedge clk)
