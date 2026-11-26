@@ -4,7 +4,7 @@ module mem (
   output logic [31:0] rd,
   input  logic [31:0] va,
   output logic [31:0] vd,
-  intput logic [3:0] wm);
+  input logic [3:0] wm);
 
   logic  [31:0] RAM [0:255];
 
